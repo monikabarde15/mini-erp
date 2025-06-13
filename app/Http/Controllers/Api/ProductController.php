@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
 {
-     public function index()
+    public function index(): JsonResponse
     {
-        return response()->json(Product::all());
+        return response()->json(Product::all(), 200);
     }
 }
